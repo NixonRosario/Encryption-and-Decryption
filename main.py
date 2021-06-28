@@ -5,7 +5,7 @@
 
 
 # The Encryption Function
-def cipher_encrypt(plain_text, key):
+def cipher_encrypt(plain_text, key): # key is used has an swifting value
 
     encrypted = ""
 
@@ -13,7 +13,7 @@ def cipher_encrypt(plain_text, key):
 
         if c.isupper():  # check if it's an uppercase character
 
-            c_index = ord(c) - ord('A')
+            c_index = ord(c) - ord('A') # ord('A') used because A is the first value in the alphabet
 
             # shift the current character by key positions
             c_shifted = (c_index + key) % 26 + ord('A')
@@ -24,7 +24,7 @@ def cipher_encrypt(plain_text, key):
 
         elif c.islower():  # check if its a lowercase character
 
-            # subtract the unicode of 'a' to get index in [0-25) range
+            # subtract the unicode of 'a' to get index in [0-25] range
             c_index = ord(c) - ord('a')
 
             c_shifted = (c_index + key) % 26 + ord('a')
@@ -94,7 +94,7 @@ def cipher_decrypt(ciphertext, key):
 
 plain_text = input("Enter the message:- ")
 
-ciphertext1 = cipher_encrypt(plain_text, 4)
+ciphertext1 = cipher_encrypt(plain_text, 4) # function calling is made
 
 print("Your text message:\n", plain_text)
 
